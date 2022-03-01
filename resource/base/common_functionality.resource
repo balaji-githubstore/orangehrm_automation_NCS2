@@ -14,3 +14,8 @@ Launch Browser
     Set Selenium Implicit Wait    30s
     Set Screenshot Directory    path=${EXECDIR}${/}screenshots
     Go To    url=${URL}
+
+End Browser
+    Capture Page Screenshot
+    Close Browser
+

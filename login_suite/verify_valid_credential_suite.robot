@@ -5,7 +5,7 @@ Documentation       This suite handles test cases related to valid credential co
 Resource    ../resource/base/common_functionality.resource
 
 Test Setup      Launch Browser
-Test Teardown   Close Browser
+Test Teardown   End Browser
 
 
 *** Test Cases ***
@@ -14,6 +14,3 @@ Verify Valid Credential Test
     Input Password    id=txtPassword    admin123
     Click Element    name=Submit
     Element Text Should Be    tag=h1    Dashboard
-
-
-
