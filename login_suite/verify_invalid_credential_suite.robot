@@ -13,7 +13,6 @@ Verify Invalid Credential Test
     Input Text    id=txtUsername    john
     Input Password    id=txtPassword    admin123
     Click Element    name=Submit
-
     Element Should Contain    id=spanMessage    Invalid credentials
 
 

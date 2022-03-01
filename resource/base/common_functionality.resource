@@ -4,12 +4,12 @@ Documentation   This file contains browser configuration details, reusable keywo
 Library     SeleniumLibrary
 
 *** Variables ***
-${BROWSER_NAME}     chrome
+${BROWSER_NAME}     edge
 ${URL}      https://opensource-demo.orangehrmlive.com/
 
 *** Keywords ***
 Launch Browser
-    Open Browser    browser=${BROWSER_NAME}     executable_path=${EXECDIR}${/}driver${/}chromedriver.exe
+    Open Browser    browser=${BROWSER_NAME}     executable_path=${EXECDIR}${/}driver${/}msedgedriver.exe
     Maximize Browser Window
     Set Selenium Implicit Wait    30s
     Set Screenshot Directory    path=${EXECDIR}${/}screenshots
@@ -18,4 +18,5 @@ Launch Browser
 End Browser
     Capture Page Screenshot
     Close Browser
+
 
