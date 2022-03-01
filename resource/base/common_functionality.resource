@@ -12,4 +12,5 @@ Launch Browser
     Open Browser    browser=${BROWSER_NAME}     executable_path=${EXECDIR}${/}driver${/}chromedriver.exe
     Maximize Browser Window
     Set Selenium Implicit Wait    30s
+    Set Screenshot Directory    path=${EXECDIR}${/}screenshots
     Go To    url=${URL}
