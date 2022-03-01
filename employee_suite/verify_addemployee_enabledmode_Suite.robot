@@ -17,10 +17,10 @@ Verify Add Employee Enabled Mode Test
     Input Text    id=firstName    john
     Input Text    id=middleName   ray
     Input Text    id=lastName    smith
-    Input Text    id=employeeId    E102
+    Input Text    id=employeeId    E202
     Choose File    id=photofile   file_path=${EXECDIR}${/}files${/}Photo_e101.png
     Select Checkbox    id=chkLogin
-    Input Text    id=user_name    useremp123
+    Input Text    id=user_name    useremp12332ggggg
     Input Text    id=user_password  userpass
     Input Text    id=re_password    userpass
     Select From List By Value    id=status   Enabled
@@ -28,14 +28,27 @@ Verify Add Employee Enabled Mode Test
 
     Element Text Should Be    xpath=//h1[contains(text(),'Pers')]    Personal Details
     Textfield Value Should Be    id=personal_txtEmpFirstName    john
-    Textfield Value Should Be    id=personal_txtEmployeeId    E102
+    Textfield Value Should Be    id=personal_txtEmployeeId    E202
 
     Click Element    link=Employee List
-    Input Text    id=empsearch_id    E102
+    Input Text    id=empsearch_id    E202
     Click Element    id=searchBtn
     Table Should Contain    id=resultTable    john
-    Table Should Contain    id=resultTable    E102
+    Table Should Contain    id=resultTable    E10222
 
+#
+#username
+#password
+#firstname
+#lastname
+#employeeid
+#filepath
+#user id
+#password
+#confirmpassword
+#Enabled
+#
+#expected_header
 
 
 
