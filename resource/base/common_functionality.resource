@@ -4,7 +4,7 @@ Documentation   This file contains browser configuration details, reusable keywo
 Library     SeleniumLibrary
 
 *** Variables ***
-${BROWSER_NAME}     edge
+${BROWSER_NAME}     gc
 ${URL}      https://opensource-demo.orangehrmlive.com/
 
 *** Keywords ***
