@@ -12,8 +12,7 @@ Test Teardown   End Browser
 Test Template   Verify Add Employee Enabled Mode Template
 
 *** Test Cases ***
-TC1
-
+TC1_${user_id}
 
 *** Keywords ***
 Verify Add Employee Enabled Mode Template
