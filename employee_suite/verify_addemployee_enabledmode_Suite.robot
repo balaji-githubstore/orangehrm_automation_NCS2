@@ -7,8 +7,10 @@ Resource    ../resource/base/common_functionality.resource
 Test Setup      Launch Browser
 Test Teardown   End Browser
 
+Test Template   Verify Add Employee Enabled Mode Template
 *** Test Cases ***
-
+TC1     Admin   admin123    John    k   ken     E303    Photo_e101.png      john12
+    ...     Welcome@123     Welcome@123     Enabled     Personal Details
 
 
 *** Keywords ***
@@ -30,7 +32,7 @@ Verify Add Employee Enabled Mode Template
     Input Text    id=user_name    ${user_id}
     Input Text    id=user_password  ${login_password}
     Input Text    id=re_password    ${confirm_password}
-    Select From List By Value    id=status   ${login_status}
+    Select From List By Label    id=status   ${login_status}
     Click Element    id=btnSave
 
     Element Text Should Be    xpath=//h1[contains(text(),'Pers')]    ${expected_header}

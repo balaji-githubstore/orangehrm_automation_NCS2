@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220301 17:45:46.502" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220302 10:03:37.769" rpa="false" schemaversion="2">
 <suite id="s1" name="verify addemployee enabledmode Suite" source="C:\Mine\Company\NCS2\orangehrm_automation\employee_suite\verify_addemployee_enabledmode_Suite.robot">
-<test id="s1-t1" name="Verify Add Employee Enabled Mode Test">
+<test id="s1-t1" name="TC1">
 <kw name="Launch Browser" library="common_functionality" type="SETUP">
 <if>
 <branch type="IF" condition="'${BROWSER_NAME}'=='gc'">
@@ -9,205 +9,243 @@
 <arg>browser=chrome</arg>
 <arg>executable_path=${EXECDIR}${/}driver${/}chromedriver.exe</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220301 17:45:46.777" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20220301 17:45:46.776" endtime="20220301 17:45:48.090"/>
+<msg timestamp="20220302 10:03:38.059" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220302 10:03:38.058" endtime="20220302 10:03:39.149"/>
 </kw>
-<status status="PASS" starttime="20220301 17:45:46.776" endtime="20220301 17:45:48.090"/>
+<status status="PASS" starttime="20220302 10:03:38.058" endtime="20220302 10:03:39.149"/>
 </branch>
 <branch type="ELSE IF" condition="'${BROWSER_NAME}'=='edge'">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>browser=edge</arg>
 <arg>executable_path=${EXECDIR}${/}driver${/}msedgedriver.exe</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="NOT RUN" starttime="20220301 17:45:48.091" endtime="20220301 17:45:48.091"/>
+<status status="NOT RUN" starttime="20220302 10:03:39.150" endtime="20220302 10:03:39.150"/>
 </kw>
-<status status="NOT RUN" starttime="20220301 17:45:48.090" endtime="20220301 17:45:48.091"/>
+<status status="NOT RUN" starttime="20220302 10:03:39.149" endtime="20220302 10:03:39.150"/>
 </branch>
 <branch type="ELSE">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>browser=ff</arg>
 <arg>executable_path=${EXECDIR}${/}driver${/}geckodriver.exe</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="NOT RUN" starttime="20220301 17:45:48.091" endtime="20220301 17:45:48.091"/>
+<status status="NOT RUN" starttime="20220302 10:03:39.150" endtime="20220302 10:03:39.150"/>
 </kw>
-<status status="NOT RUN" starttime="20220301 17:45:48.091" endtime="20220301 17:45:48.091"/>
+<status status="NOT RUN" starttime="20220302 10:03:39.150" endtime="20220302 10:03:39.150"/>
 </branch>
-<status status="PASS" starttime="20220301 17:45:46.776" endtime="20220301 17:45:48.091"/>
+<status status="PASS" starttime="20220302 10:03:38.058" endtime="20220302 10:03:39.150"/>
 </if>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220301 17:45:48.091" endtime="20220301 17:45:48.208"/>
+<status status="PASS" starttime="20220302 10:03:39.150" endtime="20220302 10:03:39.273"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>30s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220301 17:45:48.208" endtime="20220301 17:45:48.210"/>
+<status status="PASS" starttime="20220302 10:03:39.274" endtime="20220302 10:03:39.277"/>
 </kw>
 <kw name="Set Screenshot Directory" library="SeleniumLibrary">
 <arg>path=${EXECDIR}${/}screenshots</arg>
 <doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20220301 17:45:48.210" endtime="20220301 17:45:48.210"/>
+<status status="PASS" starttime="20220302 10:03:39.277" endtime="20220302 10:03:39.278"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>url=${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220301 17:45:48.211" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
-<status status="PASS" starttime="20220301 17:45:48.210" endtime="20220301 17:45:52.660"/>
+<msg timestamp="20220302 10:03:39.279" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
+<status status="PASS" starttime="20220302 10:03:39.278" endtime="20220302 10:03:43.520"/>
 </kw>
-<status status="PASS" starttime="20220301 17:45:46.776" endtime="20220301 17:45:52.660"/>
+<status status="PASS" starttime="20220302 10:03:38.058" endtime="20220302 10:03:43.520"/>
 </kw>
+<kw name="Verify Add Employee Enabled Mode Template">
+<arg>Admin</arg>
+<arg>admin123</arg>
+<arg>John</arg>
+<arg>k</arg>
+<arg>ken</arg>
+<arg>E303</arg>
+<arg>Photo_e101.png</arg>
+<arg>john12</arg>
+<arg>Welcome@123</arg>
+<arg>Welcome@123</arg>
+<arg>Enabled</arg>
+<arg>Personal Details</arg>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=txtUsername</arg>
-<arg>Admin</arg>
+<arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220301 17:45:52.661" level="INFO">Typing text 'Admin' into text field 'id=txtUsername'.</msg>
-<status status="PASS" starttime="20220301 17:45:52.660" endtime="20220301 17:45:52.739"/>
+<msg timestamp="20220302 10:03:43.523" level="INFO">Typing text 'Admin' into text field 'id=txtUsername'.</msg>
+<status status="PASS" starttime="20220302 10:03:43.522" endtime="20220302 10:03:43.625"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>id=txtPassword</arg>
-<arg>admin123</arg>
+<arg>${password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20220301 17:45:52.740" level="INFO">Typing password into text field 'id=txtPassword'.</msg>
-<msg timestamp="20220301 17:45:52.776" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20220301 17:45:52.810" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20220301 17:45:52.740" endtime="20220301 17:45:52.810"/>
+<msg timestamp="20220302 10:03:43.626" level="INFO">Typing password into text field 'id=txtPassword'.</msg>
+<msg timestamp="20220302 10:03:43.676" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220302 10:03:43.726" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220302 10:03:43.625" endtime="20220302 10:03:43.726"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>name=Submit</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220301 17:45:52.811" level="INFO">Clicking element 'name=Submit'.</msg>
-<status status="PASS" starttime="20220301 17:45:52.811" endtime="20220301 17:45:56.247"/>
+<msg timestamp="20220302 10:03:43.726" level="INFO">Clicking element 'name=Submit'.</msg>
+<status status="PASS" starttime="20220302 10:03:43.726" endtime="20220302 10:03:48.155"/>
 </kw>
 <kw name="Mouse Over" library="SeleniumLibrary">
 <arg>link=PIM</arg>
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20220301 17:45:56.250" level="INFO">Simulating Mouse Over on element 'link=PIM'.</msg>
-<status status="PASS" starttime="20220301 17:45:56.249" endtime="20220301 17:45:57.573"/>
+<msg timestamp="20220302 10:03:48.156" level="INFO">Simulating Mouse Over on element 'link=PIM'.</msg>
+<status status="PASS" starttime="20220302 10:03:48.156" endtime="20220302 10:03:48.457"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>link=Add Employee</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220301 17:45:57.574" level="INFO">Clicking element 'link=Add Employee'.</msg>
-<status status="PASS" starttime="20220301 17:45:57.574" endtime="20220301 17:45:58.594"/>
+<msg timestamp="20220302 10:03:48.458" level="INFO">Clicking element 'link=Add Employee'.</msg>
+<status status="PASS" starttime="20220302 10:03:48.457" endtime="20220302 10:03:49.468"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=firstName</arg>
-<arg>john</arg>
+<arg>${firstname}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220301 17:45:58.595" level="INFO">Typing text 'john' into text field 'id=firstName'.</msg>
-<status status="PASS" starttime="20220301 17:45:58.594" endtime="20220301 17:45:58.690"/>
+<msg timestamp="20220302 10:03:49.468" level="INFO">Typing text 'John' into text field 'id=firstName'.</msg>
+<status status="PASS" starttime="20220302 10:03:49.468" endtime="20220302 10:03:49.551"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=middleName</arg>
-<arg>ray</arg>
+<arg>${middlename}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220301 17:45:58.691" level="INFO">Typing text 'ray' into text field 'id=middleName'.</msg>
-<status status="PASS" starttime="20220301 17:45:58.690" endtime="20220301 17:45:58.771"/>
+<msg timestamp="20220302 10:03:49.551" level="INFO">Typing text 'k' into text field 'id=middleName'.</msg>
+<status status="PASS" starttime="20220302 10:03:49.551" endtime="20220302 10:03:49.636"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=lastName</arg>
-<arg>smith</arg>
+<arg>${lastname}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220301 17:45:58.771" level="INFO">Typing text 'smith' into text field 'id=lastName'.</msg>
-<status status="PASS" starttime="20220301 17:45:58.771" endtime="20220301 17:45:58.854"/>
+<msg timestamp="20220302 10:03:49.636" level="INFO">Typing text 'ken' into text field 'id=lastName'.</msg>
+<status status="PASS" starttime="20220302 10:03:49.636" endtime="20220302 10:03:49.716"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=employeeId</arg>
-<arg>E202</arg>
+<arg>${employee_id}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220301 17:45:58.855" level="INFO">Typing text 'E202' into text field 'id=employeeId'.</msg>
-<status status="PASS" starttime="20220301 17:45:58.855" endtime="20220301 17:45:58.939"/>
+<msg timestamp="20220302 10:03:49.716" level="INFO">Typing text 'E303' into text field 'id=employeeId'.</msg>
+<status status="PASS" starttime="20220302 10:03:49.716" endtime="20220302 10:03:49.789"/>
 </kw>
 <kw name="Choose File" library="SeleniumLibrary">
 <arg>id=photofile</arg>
-<arg>file_path=${EXECDIR}${/}files${/}Photo_e101.png</arg>
+<arg>file_path=${EXECDIR}${/}files${/}${file_detail}</arg>
 <doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
-<msg timestamp="20220301 17:45:58.940" level="INFO">Sending C:\Mine\Company\NCS2\orangehrm_automation\files\Photo_e101.png to browser.</msg>
-<status status="PASS" starttime="20220301 17:45:58.939" endtime="20220301 17:45:59.141"/>
+<msg timestamp="20220302 10:03:49.790" level="INFO">Sending C:\Mine\Company\NCS2\orangehrm_automation\files\Photo_e101.png to browser.</msg>
+<status status="PASS" starttime="20220302 10:03:49.789" endtime="20220302 10:03:49.820"/>
 </kw>
 <kw name="Select Checkbox" library="SeleniumLibrary">
 <arg>id=chkLogin</arg>
 <doc>Selects the checkbox identified by ``locator``.</doc>
-<msg timestamp="20220301 17:45:59.141" level="INFO">Selecting checkbox 'id=chkLogin'.</msg>
-<status status="PASS" starttime="20220301 17:45:59.141" endtime="20220301 17:45:59.218"/>
+<msg timestamp="20220302 10:03:49.820" level="INFO">Selecting checkbox 'id=chkLogin'.</msg>
+<status status="PASS" starttime="20220302 10:03:49.820" endtime="20220302 10:03:49.892"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=user_name</arg>
-<arg>useremp12332ggggg</arg>
+<arg>${user_id}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220301 17:45:59.219" level="INFO">Typing text 'useremp12332ggggg' into text field 'id=user_name'.</msg>
-<status status="PASS" starttime="20220301 17:45:59.219" endtime="20220301 17:45:59.309"/>
+<msg timestamp="20220302 10:03:49.892" level="INFO">Typing text 'john12' into text field 'id=user_name'.</msg>
+<status status="PASS" starttime="20220302 10:03:49.892" endtime="20220302 10:03:49.957"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=user_password</arg>
-<arg>userpass</arg>
+<arg>${login_password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220301 17:45:59.310" level="INFO">Typing text 'userpass' into text field 'id=user_password'.</msg>
-<status status="PASS" starttime="20220301 17:45:59.309" endtime="20220301 17:45:59.394"/>
+<msg timestamp="20220302 10:03:49.958" level="INFO">Typing text 'Welcome@123' into text field 'id=user_password'.</msg>
+<status status="PASS" starttime="20220302 10:03:49.958" endtime="20220302 10:03:50.039"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=re_password</arg>
-<arg>userpass</arg>
+<arg>${confirm_password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220301 17:45:59.395" level="INFO">Typing text 'userpass' into text field 'id=re_password'.</msg>
-<status status="PASS" starttime="20220301 17:45:59.395" endtime="20220301 17:45:59.472"/>
+<msg timestamp="20220302 10:03:50.040" level="INFO">Typing text 'Welcome@123' into text field 'id=re_password'.</msg>
+<status status="PASS" starttime="20220302 10:03:50.040" endtime="20220302 10:03:50.114"/>
 </kw>
-<kw name="Select From List By Value" library="SeleniumLibrary">
+<kw name="Select From List By Label" library="SeleniumLibrary">
 <arg>id=status</arg>
-<arg>Enabled</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20220301 17:45:59.473" level="INFO">Selecting options from selection list 'id=status' by value Enabled.</msg>
-<status status="PASS" starttime="20220301 17:45:59.472" endtime="20220301 17:45:59.513"/>
+<arg>${login_status}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220302 10:03:50.115" level="INFO">Selecting options from selection list 'id=status' by label Enabled.</msg>
+<status status="PASS" starttime="20220302 10:03:50.115" endtime="20220302 10:03:50.162"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>id=btnSave</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220301 17:45:59.513" level="INFO">Clicking element 'id=btnSave'.</msg>
-<status status="PASS" starttime="20220301 17:45:59.513" endtime="20220301 17:45:59.563"/>
+<msg timestamp="20220302 10:03:50.163" level="INFO">Clicking element 'id=btnSave'.</msg>
+<status status="PASS" starttime="20220302 10:03:50.163" endtime="20220302 10:03:50.217"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath=//h1[contains(text(),'Pers')]</arg>
+<arg>${expected_header}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220302 10:03:50.217" level="INFO">Verifying element 'xpath=//h1[contains(text(),'Pers')]' contains exact text 'Personal Details'.</msg>
+<msg timestamp="20220302 10:04:20.505" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-39.png"&gt;&lt;img src="screenshots/selenium-screenshot-39.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220302 10:04:20.566" level="FAIL">Element with locator 'xpath=//h1[contains(text(),'Pers')]' not found.</msg>
+<status status="FAIL" starttime="20220302 10:03:50.217" endtime="20220302 10:04:20.567"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>id=personal_txtEmpFirstName</arg>
+<arg>${firstname}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<status status="NOT RUN" starttime="20220302 10:04:20.567" endtime="20220302 10:04:20.567"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>id=personal_txtEmployeeId</arg>
+<arg>${employee_id}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<status status="NOT RUN" starttime="20220302 10:04:20.567" endtime="20220302 10:04:20.567"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>link=Employee List</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220301 17:45:59.565" level="INFO">Clicking element 'link=Employee List'.</msg>
-<status status="PASS" starttime="20220301 17:45:59.564" endtime="20220301 17:46:04.162"/>
+<status status="NOT RUN" starttime="20220302 10:04:20.567" endtime="20220302 10:04:20.567"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=empsearch_id</arg>
-<arg>E202</arg>
+<arg>${employee_id}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220301 17:46:04.163" level="INFO">Typing text 'E202' into text field 'id=empsearch_id'.</msg>
-<msg timestamp="20220301 17:46:34.491" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-36.png"&gt;&lt;img src="screenshots/selenium-screenshot-36.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20220301 17:46:34.497" level="FAIL">Element with locator 'id=empsearch_id' not found.</msg>
-<status status="FAIL" starttime="20220301 17:46:04.163" endtime="20220301 17:46:34.497"/>
+<status status="NOT RUN" starttime="20220302 10:04:20.567" endtime="20220302 10:04:20.567"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>id=searchBtn</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20220301 17:46:34.497" endtime="20220301 17:46:34.497"/>
+<status status="NOT RUN" starttime="20220302 10:04:20.567" endtime="20220302 10:04:20.567"/>
 </kw>
-<kw name="Table Row Should Contain" library="SeleniumLibrary">
+<kw name="Table Should Contain" library="SeleniumLibrary">
 <arg>id=resultTable</arg>
-<arg>john</arg>
-<doc>Verifies that table row contains text ``expected``.</doc>
-<status status="NOT RUN" starttime="20220301 17:46:34.499" endtime="20220301 17:46:34.499"/>
+<arg>${firstname}</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20220302 10:04:20.567" endtime="20220302 10:04:20.567"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>id=resultTable</arg>
+<arg>${employee_id}</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20220302 10:04:20.568" endtime="20220302 10:04:20.568"/>
+</kw>
+<status status="FAIL" starttime="20220302 10:03:43.521" endtime="20220302 10:04:20.568"/>
 </kw>
 <kw name="End Browser" library="common_functionality" type="TEARDOWN">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220301 17:46:34.773" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-37.png"&gt;&lt;img src="screenshots/selenium-screenshot-37.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220301 17:46:34.500" endtime="20220301 17:46:34.773"/>
+<msg timestamp="20220302 10:04:20.837" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-40.png"&gt;&lt;img src="screenshots/selenium-screenshot-40.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220302 10:04:20.570" endtime="20220302 10:04:20.837"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220301 17:46:34.774" endtime="20220301 17:46:36.885"/>
+<status status="PASS" starttime="20220302 10:04:20.838" endtime="20220302 10:04:22.968"/>
 </kw>
-<status status="PASS" starttime="20220301 17:46:34.500" endtime="20220301 17:46:36.885"/>
+<status status="PASS" starttime="20220302 10:04:20.569" endtime="20220302 10:04:22.968"/>
 </kw>
-<status status="FAIL" starttime="20220301 17:45:46.775" endtime="20220301 17:46:36.886">Element with locator 'id=empsearch_id' not found.</status>
+<status status="FAIL" starttime="20220302 10:03:38.057" endtime="20220302 10:04:22.968">Element with locator 'xpath=//h1[contains(text(),'Pers')]' not found.</status>
 </test>
 <doc>To verify the valid record of add employee by providing credentials with enabled mode
 test case TC_OH_16, SC_OH_09,</doc>
-<status status="FAIL" starttime="20220301 17:45:46.504" endtime="20220301 17:46:36.888"/>
+<status status="FAIL" starttime="20220302 10:03:37.770" endtime="20220302 10:04:22.970"/>
 </suite>
 <statistics>
 <total>
