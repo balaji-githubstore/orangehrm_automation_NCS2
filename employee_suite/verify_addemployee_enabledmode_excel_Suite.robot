@@ -4,7 +4,7 @@ Documentation       To verify the valid record of add employee by providing cred
 
 Resource    ../resource/base/common_functionality.resource
 
-Library     DataDriver      file=../test_data/orangehrm_data.xlsx       sheet_name=VerifyAddEmployeeEnabled
+Library     DataDriver      file=../test_data/orangehrm_data.xlsx   sheet_name=VerifyAddEmployeeEnabled
 
 Test Setup      Launch Browser
 Test Teardown   End Browser
