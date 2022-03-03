@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220303 12:47:50.889" rpa="false" schemaversion="2">
-<suite id="s1" name="Verify Invalid Credential Suite" source="C:\Mine\Company\NCS2\orangehrm_automation\login_suite\verify_invalid_credential_suite.robot">
-<test id="s1-t1" name="TC1">
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220303 15:46:00.605" rpa="false" schemaversion="2">
+<suite id="s1" name="Verify Add Emergency Contact Suite" source="C:\Mine\Company\NCS2\orangehrm_automation\my_info_suite\verify_add_emergency_contact_suite.robot">
+<test id="s1-t1" name="Verify Add emergency Contact Test_tony starks">
 <kw name="Launch Browser" library="common_functionality" type="SETUP">
 <if>
 <branch type="IF" condition="'${BROWSER_NAME}'=='gc'">
@@ -9,466 +9,218 @@
 <arg>browser=chrome</arg>
 <arg>executable_path=${EXECDIR}${/}driver${/}chromedriver.exe</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220303 12:47:51.146" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20220303 12:47:51.146" endtime="20220303 12:47:52.394"/>
+<msg timestamp="20220303 15:46:02.282" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220303 15:46:02.281" endtime="20220303 15:46:03.662"/>
 </kw>
-<status status="PASS" starttime="20220303 12:47:51.146" endtime="20220303 12:47:52.394"/>
+<status status="PASS" starttime="20220303 15:46:02.281" endtime="20220303 15:46:03.662"/>
 </branch>
 <branch type="ELSE IF" condition="'${BROWSER_NAME}'=='edge'">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>browser=edge</arg>
 <arg>executable_path=${EXECDIR}${/}driver${/}msedgedriver.exe</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="NOT RUN" starttime="20220303 12:47:52.395" endtime="20220303 12:47:52.395"/>
+<status status="NOT RUN" starttime="20220303 15:46:03.662" endtime="20220303 15:46:03.663"/>
 </kw>
-<status status="NOT RUN" starttime="20220303 12:47:52.394" endtime="20220303 12:47:52.395"/>
+<status status="NOT RUN" starttime="20220303 15:46:03.662" endtime="20220303 15:46:03.663"/>
 </branch>
 <branch type="ELSE">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>browser=ff</arg>
 <arg>executable_path=${EXECDIR}${/}driver${/}geckodriver.exe</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="NOT RUN" starttime="20220303 12:47:52.395" endtime="20220303 12:47:52.395"/>
+<status status="NOT RUN" starttime="20220303 15:46:03.663" endtime="20220303 15:46:03.663"/>
 </kw>
-<status status="NOT RUN" starttime="20220303 12:47:52.395" endtime="20220303 12:47:52.395"/>
+<status status="NOT RUN" starttime="20220303 15:46:03.663" endtime="20220303 15:46:03.663"/>
 </branch>
-<status status="PASS" starttime="20220303 12:47:51.146" endtime="20220303 12:47:52.395"/>
+<status status="PASS" starttime="20220303 15:46:02.281" endtime="20220303 15:46:03.664"/>
 </if>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220303 12:47:52.395" endtime="20220303 12:47:52.505"/>
+<status status="PASS" starttime="20220303 15:46:03.664" endtime="20220303 15:46:03.803"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>30s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220303 12:47:52.505" endtime="20220303 12:47:52.506"/>
+<status status="PASS" starttime="20220303 15:46:03.804" endtime="20220303 15:46:03.807"/>
 </kw>
 <kw name="Set Screenshot Directory" library="SeleniumLibrary">
 <arg>path=${EXECDIR}${/}screenshots</arg>
 <doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20220303 12:47:52.506" endtime="20220303 12:47:52.507"/>
+<status status="PASS" starttime="20220303 15:46:03.807" endtime="20220303 15:46:03.809"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>url=${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220303 12:47:52.508" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
-<status status="PASS" starttime="20220303 12:47:52.507" endtime="20220303 12:47:56.637"/>
+<msg timestamp="20220303 15:46:03.810" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
+<status status="PASS" starttime="20220303 15:46:03.809" endtime="20220303 15:46:07.710"/>
 </kw>
-<status status="PASS" starttime="20220303 12:47:51.145" endtime="20220303 12:47:56.637"/>
+<status status="PASS" starttime="20220303 15:46:02.281" endtime="20220303 15:46:07.711"/>
 </kw>
-<kw name="Verify Invalid Credential Template">
-<arg>john</arg>
-<arg>john123</arg>
-<arg>Invalid credentials</arg>
-<kw name="Enter Username" library="login_page">
-<arg>${XXX}</arg>
-<doc>This keyword will enter username provided</doc>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${USERNAME_LOCATOR}</arg>
-<arg>${zzz}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220303 12:47:56.641" level="INFO">Typing text 'john' into text field 'id=txtUsername'.</msg>
-<status status="PASS" starttime="20220303 12:47:56.641" endtime="20220303 12:47:56.717"/>
-</kw>
-<status status="PASS" starttime="20220303 12:47:56.640" endtime="20220303 12:47:56.717"/>
-</kw>
-<kw name="Enter Password" library="login_page">
-<arg>${YYY}</arg>
-<doc>This keyword will enter password provided</doc>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>${PASSWORD_LOCATOR}</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20220303 12:47:56.719" level="INFO">Typing password into text field 'id=txtPassword'.</msg>
-<msg timestamp="20220303 12:47:56.756" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20220303 12:47:56.792" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20220303 12:47:56.718" endtime="20220303 12:47:56.793"/>
-</kw>
-<status status="PASS" starttime="20220303 12:47:56.717" endtime="20220303 12:47:56.793"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>name=Submit</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220303 12:47:56.794" level="INFO">Clicking element 'name=Submit'.</msg>
-<status status="PASS" starttime="20220303 12:47:56.793" endtime="20220303 12:47:58.196"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>id=spanMessage</arg>
-<arg>${expected_error}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20220303 12:47:58.281" level="INFO">Element 'id=spanMessage' contains text 'Invalid credentials'.</msg>
-<status status="PASS" starttime="20220303 12:47:58.197" endtime="20220303 12:47:58.281"/>
-</kw>
-<status status="PASS" starttime="20220303 12:47:56.639" endtime="20220303 12:47:58.281"/>
-</kw>
-<kw name="End Browser" library="common_functionality" type="TEARDOWN">
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220303 12:47:58.599" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-92.png"&gt;&lt;img src="screenshots/selenium-screenshot-92.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220303 12:47:58.284" endtime="20220303 12:47:58.599"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220303 12:47:58.599" endtime="20220303 12:48:00.726"/>
-</kw>
-<status status="PASS" starttime="20220303 12:47:58.283" endtime="20220303 12:48:00.727"/>
-</kw>
-<status status="PASS" starttime="20220303 12:47:51.145" endtime="20220303 12:48:00.727"/>
-</test>
-<test id="s1-t2" name="TC2">
-<kw name="Launch Browser" library="common_functionality" type="SETUP">
-<if>
-<branch type="IF" condition="'${BROWSER_NAME}'=='gc'">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=chrome</arg>
-<arg>executable_path=${EXECDIR}${/}driver${/}chromedriver.exe</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220303 12:48:00.733" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20220303 12:48:00.733" endtime="20220303 12:48:01.903"/>
-</kw>
-<status status="PASS" starttime="20220303 12:48:00.732" endtime="20220303 12:48:01.903"/>
-</branch>
-<branch type="ELSE IF" condition="'${BROWSER_NAME}'=='edge'">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=edge</arg>
-<arg>executable_path=${EXECDIR}${/}driver${/}msedgedriver.exe</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="NOT RUN" starttime="20220303 12:48:01.903" endtime="20220303 12:48:01.904"/>
-</kw>
-<status status="NOT RUN" starttime="20220303 12:48:01.903" endtime="20220303 12:48:01.904"/>
-</branch>
-<branch type="ELSE">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=ff</arg>
-<arg>executable_path=${EXECDIR}${/}driver${/}geckodriver.exe</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="NOT RUN" starttime="20220303 12:48:01.904" endtime="20220303 12:48:01.904"/>
-</kw>
-<status status="NOT RUN" starttime="20220303 12:48:01.904" endtime="20220303 12:48:01.904"/>
-</branch>
-<status status="PASS" starttime="20220303 12:48:00.732" endtime="20220303 12:48:01.904"/>
-</if>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220303 12:48:01.904" endtime="20220303 12:48:02.024"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220303 12:48:02.024" endtime="20220303 12:48:02.026"/>
-</kw>
-<kw name="Set Screenshot Directory" library="SeleniumLibrary">
-<arg>path=${EXECDIR}${/}screenshots</arg>
-<doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20220303 12:48:02.026" endtime="20220303 12:48:02.027"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220303 12:48:02.027" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
-<status status="PASS" starttime="20220303 12:48:02.027" endtime="20220303 12:48:05.815"/>
-</kw>
-<status status="PASS" starttime="20220303 12:48:00.731" endtime="20220303 12:48:05.815"/>
-</kw>
-<kw name="Verify Invalid Credential Template">
-<arg>peter</arg>
-<arg>peter23</arg>
-<arg>Invalid credentials</arg>
-<kw name="Enter Username" library="login_page">
-<arg>${XXX}</arg>
-<doc>This keyword will enter username provided</doc>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${USERNAME_LOCATOR}</arg>
-<arg>${zzz}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220303 12:48:05.818" level="INFO">Typing text 'peter' into text field 'id=txtUsername'.</msg>
-<status status="PASS" starttime="20220303 12:48:05.817" endtime="20220303 12:48:05.897"/>
-</kw>
-<status status="PASS" starttime="20220303 12:48:05.816" endtime="20220303 12:48:05.897"/>
-</kw>
-<kw name="Enter Password" library="login_page">
-<arg>${YYY}</arg>
-<doc>This keyword will enter password provided</doc>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>${PASSWORD_LOCATOR}</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20220303 12:48:05.898" level="INFO">Typing password into text field 'id=txtPassword'.</msg>
-<msg timestamp="20220303 12:48:05.938" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20220303 12:48:05.984" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20220303 12:48:05.897" endtime="20220303 12:48:05.984"/>
-</kw>
-<status status="PASS" starttime="20220303 12:48:05.897" endtime="20220303 12:48:05.985"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>name=Submit</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220303 12:48:05.985" level="INFO">Clicking element 'name=Submit'.</msg>
-<status status="PASS" starttime="20220303 12:48:05.985" endtime="20220303 12:48:07.393"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>id=spanMessage</arg>
-<arg>${expected_error}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20220303 12:48:07.430" level="INFO">Element 'id=spanMessage' contains text 'Invalid credentials'.</msg>
-<status status="PASS" starttime="20220303 12:48:07.393" endtime="20220303 12:48:07.430"/>
-</kw>
-<status status="PASS" starttime="20220303 12:48:05.816" endtime="20220303 12:48:07.430"/>
-</kw>
-<kw name="End Browser" library="common_functionality" type="TEARDOWN">
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220303 12:48:07.749" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-93.png"&gt;&lt;img src="screenshots/selenium-screenshot-93.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220303 12:48:07.432" endtime="20220303 12:48:07.749"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220303 12:48:07.750" endtime="20220303 12:48:09.864"/>
-</kw>
-<status status="PASS" starttime="20220303 12:48:07.431" endtime="20220303 12:48:09.864"/>
-</kw>
-<status status="PASS" starttime="20220303 12:48:00.730" endtime="20220303 12:48:09.865"/>
-</test>
-<test id="s1-t3" name="TC3">
-<kw name="Launch Browser" library="common_functionality" type="SETUP">
-<if>
-<branch type="IF" condition="'${BROWSER_NAME}'=='gc'">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=chrome</arg>
-<arg>executable_path=${EXECDIR}${/}driver${/}chromedriver.exe</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220303 12:48:09.870" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20220303 12:48:09.869" endtime="20220303 12:48:11.196"/>
-</kw>
-<status status="PASS" starttime="20220303 12:48:09.869" endtime="20220303 12:48:11.196"/>
-</branch>
-<branch type="ELSE IF" condition="'${BROWSER_NAME}'=='edge'">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=edge</arg>
-<arg>executable_path=${EXECDIR}${/}driver${/}msedgedriver.exe</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="NOT RUN" starttime="20220303 12:48:11.196" endtime="20220303 12:48:11.196"/>
-</kw>
-<status status="NOT RUN" starttime="20220303 12:48:11.196" endtime="20220303 12:48:11.196"/>
-</branch>
-<branch type="ELSE">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=ff</arg>
-<arg>executable_path=${EXECDIR}${/}driver${/}geckodriver.exe</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="NOT RUN" starttime="20220303 12:48:11.197" endtime="20220303 12:48:11.197"/>
-</kw>
-<status status="NOT RUN" starttime="20220303 12:48:11.197" endtime="20220303 12:48:11.197"/>
-</branch>
-<status status="PASS" starttime="20220303 12:48:09.868" endtime="20220303 12:48:11.197"/>
-</if>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220303 12:48:11.197" endtime="20220303 12:48:11.318"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220303 12:48:11.318" endtime="20220303 12:48:11.319"/>
-</kw>
-<kw name="Set Screenshot Directory" library="SeleniumLibrary">
-<arg>path=${EXECDIR}${/}screenshots</arg>
-<doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20220303 12:48:11.320" endtime="20220303 12:48:11.320"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220303 12:48:11.320" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
-<status status="PASS" starttime="20220303 12:48:11.320" endtime="20220303 12:48:15.072"/>
-</kw>
-<status status="PASS" starttime="20220303 12:48:09.868" endtime="20220303 12:48:15.072"/>
-</kw>
-<kw name="Verify Invalid Credential Template">
-<arg>${EMPTY}</arg>
+<kw name="Verify Add Emergency Contact Template">
+<arg>Admin</arg>
 <arg>admin123</arg>
-<arg>Username cannot be empty</arg>
+<arg>tony starks</arg>
+<arg>friend</arg>
+<arg>999999999</arg>
+<arg>9876543210</arg>
+<arg>9898989898</arg>
 <kw name="Enter Username" library="login_page">
-<arg>${XXX}</arg>
+<arg>${username}</arg>
 <doc>This keyword will enter username provided</doc>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${USERNAME_LOCATOR}</arg>
-<arg>${zzz}</arg>
+<arg>${user_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220303 12:48:15.074" level="INFO">Typing text '' into text field 'id=txtUsername'.</msg>
-<status status="PASS" starttime="20220303 12:48:15.073" endtime="20220303 12:48:15.150"/>
+<msg timestamp="20220303 15:46:07.714" level="INFO">Typing text 'Admin' into text field 'id=txtUsername'.</msg>
+<status status="PASS" starttime="20220303 15:46:07.712" endtime="20220303 15:46:07.797"/>
 </kw>
-<status status="PASS" starttime="20220303 12:48:15.073" endtime="20220303 12:48:15.150"/>
+<status status="PASS" starttime="20220303 15:46:07.712" endtime="20220303 15:46:07.797"/>
 </kw>
 <kw name="Enter Password" library="login_page">
-<arg>${YYY}</arg>
+<arg>${password}</arg>
 <doc>This keyword will enter password provided</doc>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>${PASSWORD_LOCATOR}</arg>
 <arg>${password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20220303 12:48:15.152" level="INFO">Typing password into text field 'id=txtPassword'.</msg>
-<msg timestamp="20220303 12:48:15.188" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20220303 12:48:15.224" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20220303 12:48:15.152" endtime="20220303 12:48:15.225"/>
+<msg timestamp="20220303 15:46:07.798" level="INFO">Typing password into text field 'id=txtPassword'.</msg>
+<msg timestamp="20220303 15:46:07.834" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220303 15:46:07.883" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220303 15:46:07.798" endtime="20220303 15:46:07.883"/>
 </kw>
-<status status="PASS" starttime="20220303 12:48:15.151" endtime="20220303 12:48:15.226"/>
+<status status="PASS" starttime="20220303 15:46:07.798" endtime="20220303 15:46:07.883"/>
 </kw>
+<kw name="Click On Login" library="login_page">
+<doc>This keyword will click on login</doc>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>name=Submit</arg>
+<arg>${LOGIN_LOCATOR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220303 12:48:15.227" level="INFO">Clicking element 'name=Submit'.</msg>
-<status status="PASS" starttime="20220303 12:48:15.226" endtime="20220303 12:48:15.276"/>
+<msg timestamp="20220303 15:46:07.884" level="INFO">Clicking element 'name=Submit'.</msg>
+<status status="PASS" starttime="20220303 15:46:07.884" endtime="20220303 15:46:11.462"/>
 </kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>id=spanMessage</arg>
-<arg>${expected_error}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20220303 12:48:15.297" level="INFO">Element 'id=spanMessage' contains text 'Username cannot be empty'.</msg>
-<status status="PASS" starttime="20220303 12:48:15.276" endtime="20220303 12:48:15.297"/>
+<status status="PASS" starttime="20220303 15:46:07.883" endtime="20220303 15:46:11.463"/>
 </kw>
-<status status="PASS" starttime="20220303 12:48:15.072" endtime="20220303 12:48:15.298"/>
+<kw name="Click On MyInfo" library="main_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MYINFO_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220303 15:46:11.464" level="INFO">Clicking element 'id=menu_pim_viewMyDetails'.</msg>
+<status status="PASS" starttime="20220303 15:46:11.464" endtime="20220303 15:46:14.105"/>
 </kw>
-<kw name="End Browser" library="common_functionality" type="TEARDOWN">
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220303 12:48:15.597" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-94.png"&gt;&lt;img src="screenshots/selenium-screenshot-94.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220303 12:48:15.299" endtime="20220303 12:48:15.597"/>
+<status status="PASS" starttime="20220303 15:46:11.463" endtime="20220303 15:46:14.105"/>
 </kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220303 12:48:15.597" endtime="20220303 12:48:17.722"/>
+<kw name="Click On Emergency Contact" library="my_info_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${EMERGENCY_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220303 15:46:14.107" level="INFO">Clicking element 'link=Emergency Contacts'.</msg>
+<status status="PASS" starttime="20220303 15:46:14.107" endtime="20220303 15:46:15.092"/>
 </kw>
-<status status="PASS" starttime="20220303 12:48:15.299" endtime="20220303 12:48:17.723"/>
+<status status="PASS" starttime="20220303 15:46:14.106" endtime="20220303 15:46:15.093"/>
 </kw>
-<status status="PASS" starttime="20220303 12:48:09.867" endtime="20220303 12:48:17.725"/>
-</test>
-<test id="s1-t4" name="TC4">
-<kw name="Launch Browser" library="common_functionality" type="SETUP">
-<if>
-<branch type="IF" condition="'${BROWSER_NAME}'=='gc'">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=chrome</arg>
-<arg>executable_path=${EXECDIR}${/}driver${/}chromedriver.exe</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220303 12:48:17.732" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20220303 12:48:17.731" endtime="20220303 12:48:18.804"/>
+<kw name="Click On Add Emergency Contact" library="emergency_contact_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ADD_CONTACT_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220303 15:46:15.099" level="INFO">Clicking element 'id=btnAddContact'.</msg>
+<status status="PASS" starttime="20220303 15:46:15.097" endtime="20220303 15:46:15.183"/>
 </kw>
-<status status="PASS" starttime="20220303 12:48:17.730" endtime="20220303 12:48:18.804"/>
-</branch>
-<branch type="ELSE IF" condition="'${BROWSER_NAME}'=='edge'">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=edge</arg>
-<arg>executable_path=${EXECDIR}${/}driver${/}msedgedriver.exe</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="NOT RUN" starttime="20220303 12:48:18.805" endtime="20220303 12:48:18.805"/>
+<status status="PASS" starttime="20220303 15:46:15.094" endtime="20220303 15:46:15.183"/>
 </kw>
-<status status="NOT RUN" starttime="20220303 12:48:18.804" endtime="20220303 12:48:18.805"/>
-</branch>
-<branch type="ELSE">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=ff</arg>
-<arg>executable_path=${EXECDIR}${/}driver${/}geckodriver.exe</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="NOT RUN" starttime="20220303 12:48:18.805" endtime="20220303 12:48:18.805"/>
-</kw>
-<status status="NOT RUN" starttime="20220303 12:48:18.805" endtime="20220303 12:48:18.805"/>
-</branch>
-<status status="PASS" starttime="20220303 12:48:17.730" endtime="20220303 12:48:18.805"/>
-</if>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220303 12:48:18.805" endtime="20220303 12:48:18.924"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220303 12:48:18.924" endtime="20220303 12:48:18.926"/>
-</kw>
-<kw name="Set Screenshot Directory" library="SeleniumLibrary">
-<arg>path=${EXECDIR}${/}screenshots</arg>
-<doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20220303 12:48:18.927" endtime="20220303 12:48:18.928"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220303 12:48:18.928" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
-<status status="PASS" starttime="20220303 12:48:18.928" endtime="20220303 12:48:23.019"/>
-</kw>
-<status status="PASS" starttime="20220303 12:48:17.729" endtime="20220303 12:48:23.019"/>
-</kw>
-<kw name="Verify Invalid Credential Template">
-<arg>admin</arg>
-<arg>${EMPTY}</arg>
-<arg>Password cannot be empty</arg>
-<kw name="Enter Username" library="login_page">
-<arg>${XXX}</arg>
-<doc>This keyword will enter username provided</doc>
+<kw name="Enter Contact Name" library="emergency_contact_page">
+<arg>${contact_name}</arg>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>${USERNAME_LOCATOR}</arg>
-<arg>${zzz}</arg>
+<arg>${CONTACTNAME_LOCATOR}</arg>
+<arg>${contact_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220303 12:48:23.021" level="INFO">Typing text 'admin' into text field 'id=txtUsername'.</msg>
-<status status="PASS" starttime="20220303 12:48:23.021" endtime="20220303 12:48:23.098"/>
+<msg timestamp="20220303 15:46:15.184" level="INFO">Typing text 'tony starks' into text field 'id=emgcontacts_name'.</msg>
+<status status="PASS" starttime="20220303 15:46:15.184" endtime="20220303 15:46:15.285"/>
 </kw>
-<status status="PASS" starttime="20220303 12:48:23.020" endtime="20220303 12:48:23.098"/>
+<status status="PASS" starttime="20220303 15:46:15.184" endtime="20220303 15:46:15.285"/>
 </kw>
-<kw name="Enter Password" library="login_page">
-<arg>${YYY}</arg>
-<doc>This keyword will enter password provided</doc>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>${PASSWORD_LOCATOR}</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20220303 12:48:23.099" level="INFO">Typing password into text field 'id=txtPassword'.</msg>
-<msg timestamp="20220303 12:48:23.136" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20220303 12:48:23.170" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20220303 12:48:23.099" endtime="20220303 12:48:23.170"/>
+<kw name="Enter Relationship" library="emergency_contact_page">
+<arg>${relationship}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${RELATIONSHIP_LOCATOR}</arg>
+<arg>${relationship}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220303 15:46:15.289" level="INFO">Typing text 'friend' into text field 'id=emgcontacts_relationship'.</msg>
+<status status="PASS" starttime="20220303 15:46:15.288" endtime="20220303 15:46:15.364"/>
 </kw>
-<status status="PASS" starttime="20220303 12:48:23.098" endtime="20220303 12:48:23.170"/>
+<status status="PASS" starttime="20220303 15:46:15.285" endtime="20220303 15:46:15.365"/>
 </kw>
+<kw name="Enter Home Telephone" library="emergency_contact_page">
+<arg>${homephone}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOMEPHONE_LOCATOR}</arg>
+<arg>${homephone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220303 15:46:15.366" level="INFO">Typing text '999999999' into text field 'id=emgcontacts_homePhone'.</msg>
+<status status="PASS" starttime="20220303 15:46:15.365" endtime="20220303 15:46:15.442"/>
+</kw>
+<status status="PASS" starttime="20220303 15:46:15.365" endtime="20220303 15:46:15.443"/>
+</kw>
+<kw name="Click On Save Contact" library="emergency_contact_page">
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>name=Submit</arg>
+<arg>${SAVE_LOCATOR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220303 12:48:23.171" level="INFO">Clicking element 'name=Submit'.</msg>
-<status status="PASS" starttime="20220303 12:48:23.170" endtime="20220303 12:48:23.220"/>
+<msg timestamp="20220303 15:46:15.443" level="INFO">Clicking element 'id=btnSaveEContact'.</msg>
+<status status="PASS" starttime="20220303 15:46:15.443" endtime="20220303 15:46:16.964"/>
 </kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>id=spanMessage</arg>
-<arg>${expected_error}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20220303 12:48:23.244" level="INFO">Element 'id=spanMessage' contains text 'Password cannot be empty'.</msg>
-<status status="PASS" starttime="20220303 12:48:23.220" endtime="20220303 12:48:23.244"/>
+<status status="PASS" starttime="20220303 15:46:15.443" endtime="20220303 15:46:16.964"/>
 </kw>
-<status status="PASS" starttime="20220303 12:48:23.020" endtime="20220303 12:48:23.244"/>
+<kw name="Validate Added Record" library="emergency_contact_page">
+<arg>${contact_name}</arg>
+<arg>${relationship}</arg>
+<arg>${homephone}</arg>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>${CONTACTLIST_LOCATOR}</arg>
+<arg>${contact_name}</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220303 15:46:16.966" endtime="20220303 15:46:17.215"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>${CONTACTLIST_LOCATOR}</arg>
+<arg>${relationship}</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220303 15:46:17.215" endtime="20220303 15:46:17.360"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>${CONTACTLIST_LOCATOR}</arg>
+<arg>${homephone}</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220303 15:46:17.360" endtime="20220303 15:46:17.501"/>
+</kw>
+<status status="PASS" starttime="20220303 15:46:16.965" endtime="20220303 15:46:17.501"/>
+</kw>
+<status status="PASS" starttime="20220303 15:46:07.711" endtime="20220303 15:46:17.501"/>
 </kw>
 <kw name="End Browser" library="common_functionality" type="TEARDOWN">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220303 12:48:23.576" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-95.png"&gt;&lt;img src="screenshots/selenium-screenshot-95.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220303 12:48:23.245" endtime="20220303 12:48:23.577"/>
+<msg timestamp="20220303 15:46:17.753" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-96.png"&gt;&lt;img src="screenshots/selenium-screenshot-96.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220303 15:46:17.503" endtime="20220303 15:46:17.753"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220303 12:48:23.577" endtime="20220303 12:48:25.719"/>
+<status status="PASS" starttime="20220303 15:46:17.753" endtime="20220303 15:46:19.896"/>
 </kw>
-<status status="PASS" starttime="20220303 12:48:23.245" endtime="20220303 12:48:25.720"/>
+<status status="PASS" starttime="20220303 15:46:17.502" endtime="20220303 15:46:19.896"/>
 </kw>
-<status status="PASS" starttime="20220303 12:48:17.728" endtime="20220303 12:48:25.720"/>
+<status status="PASS" starttime="20220303 15:46:02.279" endtime="20220303 15:46:19.897"/>
 </test>
-<doc>This suite handles test cases related to valid credential connected with
-the test case TC_OH_3,TC_OH_4,TC_OH_5 , scenario SC_OH_2 and requirement OH_Req 4</doc>
-<status status="PASS" starttime="20220303 12:47:50.891" endtime="20220303 12:48:25.724"/>
+<doc>To verify valid add emergengy contact
+test case with test template and excel</doc>
+<status status="PASS" starttime="20220303 15:46:00.607" endtime="20220303 15:46:19.899"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="4" fail="0" skip="0" id="s1" name="Verify Invalid Credential Suite">Verify Invalid Credential Suite</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Verify Add Emergency Contact Suite">Verify Add Emergency Contact Suite</stat>
 </suite>
 </statistics>
 <errors>

@@ -16,6 +16,9 @@ ${ERROR_LOCATOR}        id=spanMessage
 Enter Username
     [Arguments]     ${user_name}
     [Documentation]     This keyword will enter username provided
+     ...    Example: \n
+     ...    | Enter Username | Bala |
+     ...    | Enter Username | Admin |
     Input Text    ${USERNAME_LOCATOR}    ${user_name}
 
 Enter Password
@@ -39,3 +42,4 @@ Get Copy Right Detail
 Validate Login Error Message
     [Arguments]     ${expected_message}
     Element Should Contain    ${ERROR_LOCATOR}    ${expected_message}
+

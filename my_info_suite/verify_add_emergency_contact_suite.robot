@@ -1,7 +1,12 @@
 *** Settings ***
 Documentation       To verify valid add emergengy contact
+...     test case with test template and excel
 
-Resource    ../resource/base/common_functionality.resource
+Resource    ../resource/pages/login_page.resource
+Resource    ../resource/pages/main_page.resource
+Resource    ../resource/pages/my_info_page.resource
+Resource    ../resource/pages/emergency_contact_page.resource
+
 Library     DataDriver      file=../test_data/orangehrm_data.xlsx          sheet_name=VerifyAddEmergencyContact
 
 Test Setup      Launch browser
@@ -14,22 +19,19 @@ Verify Add emergency Contact Test_${contact_name}
 Verify Add Emergency Contact Template
      [Arguments]    ${username}     ${password}   ${contact_name}
      ...    ${relationship}     ${homephone}    ${mobilephone}  ${workphone}
-    Input Text    id=txtUsername    ${username}
-    Input Text    id=txtPassword    ${password}
-    Click Element    id=btnLogin
-    Mouse Over    id=menu_pim_viewMyDetails
-    Click Element    id=menu_pim_viewMyDetails
-    Click Element    link=Emergency Contacts
-    Click Element    id=btnAddContact
-    Input Text    id=emgcontacts_name    ${contact_name}
-    Input Text    id=emgcontacts_relationship    ${relationship}
-    Input Text    id=emgcontacts_homePhone    ${homephone}
-    Input Text    id=emgcontacts_mobilePhone    ${mobilephone}
-    Input Text    id=emgcontacts_workPhone    ${workphone}
-    Click Element    id=btnSaveEContact
-    Table Should Contain    id=emgcontact_list      ${contact_name}
-    Table Should Contain    id=emgcontact_list    ${relationship}
-    Table Should Contain    id=emgcontact_list    ${homephone}
+    Enter Username  ${username}
+    Enter Password   ${password}
+    Click On Login
+    Click On MyInfo
+    Click On Emergency Contact
+    Click On Add Emergency Contact
+    Enter Contact Name    ${contact_name}
+    Enter Relationship    ${relationship}
+    Enter Home Telephone    ${homephone}
+    Click On Save Contact
+    Validate Added Record   ${contact_name}     ${relationship}     ${homephone}
+
+
 
 
 

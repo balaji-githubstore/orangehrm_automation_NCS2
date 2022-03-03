@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation       This suite handles test cases related to valid credential connected with
 ...     the test case TC_OH_3,TC_OH_4,TC_OH_5 , scenario SC_OH_2 and requirement OH_Req 4
+...     test case with test template
 Resource    ../resource/base/common_functionality.resource
 Resource    ../resource/pages/login_page.resource
 
