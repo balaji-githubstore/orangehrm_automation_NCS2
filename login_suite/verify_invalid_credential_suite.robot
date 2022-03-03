@@ -21,5 +21,5 @@ Verify Invalid Credential Template
     Enter Username  ${username}
     Enter Password   ${password}
     Click On Login
-    Element Should Contain    id=spanMessage    ${expected_error}
+    Validate Login Error Message   ${expected_error}
 

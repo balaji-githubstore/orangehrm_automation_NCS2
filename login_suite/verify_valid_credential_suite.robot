@@ -10,7 +10,7 @@ Test Teardown   End Browser
 
 *** Test Cases ***
 Verify Valid Credential Test
-    Enter Username  Balaji
+    Enter Username  Admin
     Enter Password    admin123
     Click On Login
     Element Text Should Be    tag=h1    Dashboard

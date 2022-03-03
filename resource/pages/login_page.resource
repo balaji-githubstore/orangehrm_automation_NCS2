@@ -10,6 +10,7 @@ ${PASSWORD_LOCATOR}     id=txtPassword
 ${LOGIN_LOCATOR}    name=Submit
 ${FORGOT_PASSWORD_LOCATOR}      partial link=Forgot
 ${FOOTER_DESC}      xpath=//div[@id='footer']
+${ERROR_LOCATOR}        id=spanMessage
 
 *** Keywords ***
 Enter Username
@@ -35,4 +36,6 @@ Get Copy Right Detail
    ${footer_text}    Get Text    ${FOOTER_DESC}
    [Return]     ${footer_text}
 
-
+Validate Login Error Message
+    [Arguments]     ${expected_message}
+    Element Should Contain    ${ERROR_LOCATOR}    ${expected_message}
