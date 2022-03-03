@@ -13,9 +13,9 @@ ${FOOTER_DESC}      xpath=//div[@id='footer']
 
 *** Keywords ***
 Enter Username
-    [Arguments]     ${username}
+    [Arguments]     ${user_name}
     [Documentation]     This keyword will enter username provided
-    Input Text    ${USERNAME_LOCATOR}    ${username}
+    Input Text    ${USERNAME_LOCATOR}    ${user_name}
 
 Enter Password
     [Arguments]     ${password}
